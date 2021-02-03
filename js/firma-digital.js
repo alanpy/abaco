@@ -1,3 +1,7 @@
+/*
+ * Abaco Firma Digital
+ * version 1.0.0
+ */
 (function ($, window, document, undefined) {
     'use strict';
 

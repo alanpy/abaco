@@ -315,7 +315,7 @@
         updateLabels({
             tipo: TIPO_CRT_PF_LAB,
             pasos: 3,
-            lbl_paso1: 'Datos del Solicitante',
+            lbl_paso1: 'Datos del Empleado',
             lbl_paso2: 'Datos laborales',
             lbl_ruc: 'RUC del empleador:'
         });
@@ -431,7 +431,7 @@
         $.extend($.validator.messages, {
             required: 'Campo obligatorio.',
             email: 'Por favor, introduce una dirección de email válida.',
-            equalto: 'Por favor, introduzca el mismo valor de nuevo.'
+            equalTo: 'Por favor, introduzca el mismo valor de nuevo.'
         });
 
         // bind wizzard navigation to the next and prev buttons clic

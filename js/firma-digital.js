@@ -7,6 +7,10 @@
 
     const _autocompleteCiudades = ['Juan E. Estigarrbia, Caaguazú', 'Ciudad Del Este, Alto Paraná', 'Domingo Martínez De Irala, Alto Paraná', 'Dr. Juan León Mallorquín, Alto Paraná', 'Hernandarias, Alto Paraná', 'Itaquyry, Alto Paraná', 'Juan E. Oleary, Alto Paraná', 'Los Cedrales, Alto Paraná', 'Mbaracayu, Alto Paraná', 'Minga Guazú, Alto Paraná', 'Minga Pora, Alto Paraná', 'Ñacunday, Alto Paraná', 'Naranjal, Alto Paraná', 'Presidente Franco, Alto Paraná', 'Puerto Bertoni, Alto Paraná', 'San Alberto, Alto Paraná', 'San Cristobal, Alto Paraná', 'Santa Rita, Alto Paraná', 'Santa Rosa Del Monday, Alto Paraná', 'Yguazu, Alto Paraná', 'Asunción, Asunción', 'Aregua, Asunción', 'Capiatá, Asunción', 'Fernando De La Mora, Asunción', 'Guarambare, Asunción', 'Ita, Asunción', 'Itagua, Asunción', 'José Augusto Saldivar, Asunción', 'Lambaré, Asunción', 'Limpio, Asunción', 'Loma Pyta, Asunción', 'Luque, Asunción', 'Mariano Roque Alonso, Asunción', 'Ñemby, Asunción', 'Nueva Italia, Asunción', 'San Antonio, Asunción', 'San Lorenzo, Asunción', 'Villa Elisa, Asunción', 'Villeta, Asunción', 'Ypacarai, Asunción', 'Ypane, Asunción', 'Zeballos Cue, Asunción', 'Belen, Concepción', 'Concepción, Concepción', 'Horqueta, Concepción', 'Loreto, Concepción', 'Paso Barreto, Concepción', 'Paso Mbutu, Concepción', 'Puerto Fonciere, Concepción', 'San Carlos, Concepción', 'San Lazaro, Concepción', 'Vallemi, Concepción', 'Yby ? Yau, Concepción', '25 De Diciembre, San Pedro', 'Antequera, San Pedro', 'Chore, San Pedro', 'Colonia Friesland, San Pedro', 'Colonia Navidad, San Pedro', 'Colonia Volendam, San Pedro', 'General Aquino, San Pedro', 'General Resquin, San Pedro', 'Guayaibi, San Pedro', 'Itacurubi, San Pedro', 'Lima, San Pedro', 'Nueva Germania, San Pedro', 'Puerto Rosario, San Pedro', 'Puerto Ybapobo, San Pedro', 'San Estanislao, San Pedro', 'San José Del Rosario, San Pedro', 'San Pablo, San Pedro', 'San Pedro, San Pedro', 'Tacuati, San Pedro', 'Union, San Pedro', 'Villa Del Rosario, San Pedro', 'Yataity Del Norte, San Pedro', 'Atyra, Cordillera', 'Barrio Estación, Guairá', 'Borja, Guairá', 'Capitán Mauricio José Troche, Guairá', 'Colonia Carlos Pfannl, Guairá', 'Colonia San Roque González, Guairá', 'Coronel Martínez, Guairá', 'Dr. Bottrell, Guairá', 'Felix Perez Cardozo, Guairá', 'General Eugenio A. Garay, Guairá', 'Independencia, Guairá', 'Itape, Guairá', 'Iturbe, Guairá', 'José Fasardi, Guairá', 'Mbocayaty, Guairá', 'Natalicio Talavera, Guairá', 'Ñumi, Guairá', 'Paso Yobay, Guairá', 'Pindoyu, Guairá', 'San Salvador, Guairá', 'Tebicuary, Guairá', 'Villarrica, Guairá', 'Yataity, Guairá', '3 De Febrero, Caaguazú', 'Caaguazú, Caaguazú', 'Carayao, Caaguazú', 'Cecilio Baez, Caaguazú', 'Colonia Genaro Romero, Caaguazú', 'Coronel Oviedo, Caaguazú', 'Dr. Juan Manuel Frutos, Caaguazú', 'José Domingo Ocampos, Caaguazú', 'La Pastora, Caaguazú', 'Mcal. F. Solano Lopez, Caaguazú', 'Nueva Australia, Caaguazú', 'Nueva Londres, Caaguazú', 'R.i. 3 Corrales, Caaguazú', 'Raul A. Oviedo, Caaguazú', 'Repatriación, Caaguazú', 'San Antonio Cordillera, Caaguazú', 'San Joaquin, Caaguazú', 'San José De Los Arroyos, Caaguazú', 'Santa Rosa Del Mbutu, Caaguazú', 'Simon Bolivar, Caaguazú', 'Yhu, Caaguazú', 'Abai, Caazapá', 'Buena Vista, Caazapá', 'Caazapá, Caazapá', 'Col. Mayor Nicolas Arguello, Caazapá', 'Colonia San Cosme, Caazapá', 'Compañía San Francisco, Caazapá', 'Dr. Moises Bertoni, Caazapá', 'Estacion Gral. Patricio Colman, Caazapá', 'Estacion Yuty, Caazapá', 'General Higinio Morinigo, Caazapá', 'Isla Saca, Caazapá', 'Maciel, Caazapá', 'San Juan Nepomuceno, Caazapá', 'Santa Barbara, Caazapá', 'Santa Luisa, Caazapá', 'Santa Rosa De Lima, Caazapá', 'Tabai, Caazapá', 'Yacubo, Caazapá', 'Yegros, Caazapá', 'Yuty, Caazapá', 'Alto Vera, Itapúa', 'Barrio San Roque, Itapúa', 'Bella Vista, Itapúa', 'Cambyreta, Itapúa', 'Capitán Meza, Itapúa', 'Capitán Miranda, Itapúa', 'Carlos Antonio Lopez, Itapúa', 'Carmen Del Paraná, Itapúa', 'Centro De Fronteras, Itapúa', 'Colonia Federico Chavez, Itapúa', 'Colonia Samu-u, Itapúa', 'Colonia Triunfo, Itapúa', 'Coronel Bogado, Itapúa', 'Curuñai, Itapúa', 'Edelira, Itapúa', 'Encarnación, Itapúa', 'Fram, Itapúa', 'General Artigas, Itapúa', 'General Delgado, Itapúa', 'Hohenau, Itapúa', 'Isla Alta, Itapúa', 'Jesus, Itapúa', 'José L. Oviedo, Itapúa', 'La Paz, Itapúa', 'Mayor Julio Otaño, Itapúa', 'Natalio, Itapúa', 'Nueva Alborada, Itapúa', 'Obligado, Itapúa', 'Pirapo, Itapúa', 'San Cosme Y Damian, Itapúa', 'San Dionisio, Itapúa', 'San Juan Del Paraná, Itapúa', 'San Luis Del Paraná, Itapúa', 'San Pedro Del Paraná, Itapúa', 'San Rafael Del Paraná, Itapúa', 'Tomas Romero Pereira, Itapúa', 'Trinidad, Itapúa', 'Yatytay, Itapúa', 'Ayolas, Misiones', 'Colonia Alejo García, Misiones', 'Itayuru, Misiones', 'San Ignacio, Misiones', 'San Miguel, Misiones', 'San Patricio, Misiones', 'San Ramon, Misiones', 'Santa Maria, Misiones', 'Santa Rosa, Misiones', 'Santiago, Misiones', 'Villa Florida, Misiones', 'Yabebyry, Misiones', 'Yacuti, Misiones', 'Acahay, Paraguarí', 'Caapucu, Paraguarí', 'Caballero, Paraguarí', 'Carapegua, Paraguarí', 'Cerro Leon, Paraguarí', 'Colonia G. Cesar Barrientos, Paraguarí', 'Colonia Santa Isabel, Paraguarí', 'Escobar, Paraguarí', 'La Colmena, Paraguarí', 'Mbuyapey, Paraguarí', 'Paraguarí, Paraguarí', 'Pirayu, Paraguarí', 'Quiindy, Paraguarí', 'Quyquyho, Paraguarí', 'San Roque Gonzalez, Paraguarí', 'Sapucai, Paraguarí', 'Tebicuarymi, Paraguarí', 'Valle Apua, Paraguarí', 'Yaguaron, Paraguarí', 'Ybycui, Paraguarí', 'Ybytymi, Paraguarí', 'Alberdi, Ñeembucú', 'Barrio Burrerita, Ñeembucú', 'Barrio Obrero, Ñeembucú', 'Cerrito, Ñeembucú', 'Desmochado, Ñeembucú', 'General José Eduvigis Diaz, Ñeembucú', 'Guazu Cua, Ñeembucú', 'Humaita, Ñeembucú', 'Isla Umbu, Ñeembucú', 'Laureles, Ñeembucú', 'Mayor José De J. Martinez, Ñeembucú', 'Paso De Patria, Ñeembucú', 'Pilar, Ñeembucú', 'San Juan B. De Ñeembucu, Ñeembucú', 'Tacuaras, Ñeembucú', 'Villa Franca, Ñeembucú', 'Villa Oliva, Ñeembucú', 'Villalbin, Ñeembucú', 'Bella Vista, Amambay', 'Capitán Bado, Amambay', 'Pedro Juan Caballero, Amambay', 'Colonia Anahi, Canindeyú', 'Indefinida, Indefinido', 'Corpus Christi, Canindeyú', 'Curuguaty, Canindeyú', 'General Francisco Alvarez, Canindeyú', 'Itarara, Canindeyú', 'La Paloma, Canindeyú', 'Nueva Esperanza, Canindeyú', 'Salto Del Guaira, Canindeyú', 'Ygatimi, Canindeyú', 'Ypejhu, Canindeyú', 'Benjamín Aceval, Presidente Hayes', 'Chaco-i, Presidente Hayes', 'Colonia Falcon, Presidente Hayes', 'Dr. Francia (Beteretecue), Presidente Hayes', 'Fortín Esteban Martínez, Presidente Hayes', 'Fortín General Bruguez, Presidente Hayes', 'Fortín General Caballero, Presidente Hayes', 'Nanawa, Presidente Hayes', 'Pozo Colorado, Presidente Hayes', 'Puerto Pinasco, Presidente Hayes', 'Villa Hayes, Presidente Hayes', 'Bahia Negra, Alto Paraguay', 'Fuerte Olimpo, Alto Paraguay', 'Isla Margarita, Alto Paraguay', 'La Victoria, Alto Paraguay', 'Lagerenza, Alto Paraguay', 'Puerto Guarani, Alto Paraguay', 'Puerto La Esperanza, Alto Paraguay', 'Capitán Joel Estigarribia, Boquerón', 'Colonia Neuland, Boquerón', 'Dr. Pedro P. Peña, Boquerón', 'Filadelfia, Boquerón', 'General Eugenio A. Garay, Boquerón', 'Loma Plata, Boquerón', 'Mariscal Estigarribia, Boquerón', 'Teniente 1ro. Irala Fernandez, Boquerón', 'Raul Pena, Alto Paraná', 'Iruna, Alto Paraná', 'Tavapy, Alto Paraná', 'Katuete, Canindeyú', 'Maria Auxiliadora, Itapúa', 'San Juan Bautista, Misiones', 'Altos, Cordillera', '1° De Marzo, Cordillera', 'Alfonso Tranquera, Cordillera', 'Arroyos Y Esteros, Cordillera', 'Caacupé, Cordillera', 'Caraguatay, Cordillera', 'Col. G. Bernardino Caballero, Cordillera', 'Compañía San Antonio, Cordillera', 'Emboscada, Cordillera', 'Eusebio Ayala, Cordillera', 'Isla Pucu, Cordillera', 'Itacurubi De La Cordillera, Cordillera', 'Itapiru, Cordillera', 'Juan De Mena, Cordillera', 'Loma Grande, Cordillera', 'Mbocayaty Del Yhaguy, Cordillera', 'Nueva Colombia, Cordillera', 'Piribebuy, Cordillera', 'San Bernardino, Cordillera', 'San José Obrero, Cordillera', 'Santa Elena, Cordillera', 'Tobati, Cordillera', 'Valenzuela, Cordillera', 'Yaguarete Cua, Cordillera'];
 
+    const TIPO_CRT_PF = 'Persona Física';
+    const TIPO_CRT_PF_LAB = 'Persona Física con Datos Laborales';
+    const TIPO_CRT_PJ = 'Persona Jurídica';
+
     let tabs = [];
     let current = 0;
     let max = 0;
@@ -253,30 +257,92 @@
         $('#wf-form-Form-Persona-Juridica input.error').removeClass('error');
     }
 
+    function setSteps(steps) {
+        tabs = steps;
+    }
+
+    function setStepValidators(validators) {
+        form_validators = validators;
+    }
+
+    function setTipoCertificado(tipo) {
+        tipo_certificado = tipo;
+    }
+
+    function updateLabels(labelData) {
+
+        // override default values
+        const data = $.extend({
+            tipo: '',
+            pasos: '',
+            lbl_paso1: '',
+            lbl_paso2: '',
+            lbl_ruc: ''
+        }, labelData);
+
+        // update labels
+        $('.qty-pasos, #confirmacion-paso-number').text(data.pasos);
+        $('.tipo-certificado-label').text(data.tipo);
+        $('#lbl_ruc, #lbl_ruc_confirm').text(data.lbl_ruc);
+        $('#label-title-solicitante, #label-confirmacion-solicitante').text(data.lbl_paso1);
+        $('#label-title-entidad-juridica-o-laboral, #label-confirmacion-title-empresa').text(data.lbl_paso2);
+    }
+
     // persona fisica helper
     function preparePFWizzard() {
 
-        const data = {
-            tabs: ['#tab-tipo-certificado', '#tab-solicitante', '#tab-confirmacion', '#tab-gracias'],
-            tipo: 'Persona Física'
-        }
+        setTipoCertificado(TIPO_CRT_PF);
+        setSteps(['#tab-tipo-certificado', '#tab-solicitante', '#tab-confirmacion', '#tab-gracias']);
+        setStepValidators([allow_continue, persona_fisica_validator, send_data]);
+        updateNavigation();
 
-        $('#columna-datos-empresa').hide();
-
-        // update number of steps
-        $('.qty-pasos, #confirmacion-paso-number').text('2');
-
-        // wizzard title
-        $('.tipo-certificado-label').text(data.title);
+        updateLabels({
+            tipo: TIPO_CRT_PF,
+            pasos: 2,
+            lbl_paso1: 'Datos del Solicitante'
+        });
 
         resetWzForms();
-        c_scrollTo('#wz-persona-fisica-title', 500);
+    }
 
-        return data;
+    function preparePFLaboralWizzard() {
+
+        setTipoCertificado(TIPO_CRT_PF_LAB);
+        setSteps(['#tab-tipo-certificado', '#tab-solicitante', '#tab-entidad-juridica', '#tab-confirmacion', '#tab-gracias']);
+        setStepValidators([allow_continue, persona_fisica_validator, datos_laborales_validator, send_data]);
+        updateNavigation();
+
+        updateLabels({
+            tipo: TIPO_CRT_PF_LAB,
+            pasos: 3,
+            lbl_paso1: 'Datos del Solicitante',
+            lbl_paso2: 'Datos laborales',
+            lbl_ruc: 'RUC del empleador:'
+        });
+
+        resetWzForms();
+    }
+
+    function preparePJWizzard() {
+
+        setTipoCertificado(TIPO_CRT_PJ);
+        setSteps(['#tab-tipo-certificado', '#tab-solicitante', '#tab-entidad-juridica', '#tab-confirmacion', '#tab-gracias']);
+        setStepValidators([allow_continue, persona_fisica_validator, persona_juridica_validator, send_data]);
+        updateNavigation();
+
+        updateLabels({
+            tipo: TIPO_CRT_PJ,
+            pasos: 3,
+            lbl_paso1: 'Datos del Representante Legal',
+            lbl_paso2: 'Datos del suscritor / Entidad Jurídica',
+            lbl_ruc: 'RUC:'
+        });
+
+        resetWzForms();
     }
 
     // sanitize an clean input value
-    function cleanAndReturnInputValue(el) {
+    function trimInputAndReturnValue(el) {
 
         const $el = $(el);
         const inputVal = $el.val();
@@ -289,83 +355,12 @@
         return trimmedValue;
     }
 
-    // on load
-    $(function () {
+    function setupAdvancedFormBehaviors() {
 
-        $('#fecha-de-nacimiento').attr('type', 'date');
-
-        $.extend($.validator.messages, {
-            required: 'Campo obligatorio.',
-            email: 'Por favor, introduce una dirección de email válida.'
-        });
-
-        $('#btn-persona-fisica-2').on('click', function () {
-
-            const wzData = preparePFWizzard();
-
-            tipo_certificado = wzData.tipo;
-            tabs = wzData.tabs;
-
-            form_validators = [allow_continue, persona_fisica_validator, send_data];
-            updateNavigation();
-
-            next();
-        });
-
-        $('#btn-persona-fisica-datos-laborales-2').on('click', function () {
-            tipo_certificado = 'Persona Física con Datos Laborales';
-
-            $('.qty-pasos, #confirmacion-paso-number').text('3');
-
-            tabs = ['#tab-tipo-certificado', '#tab-solicitante', '#tab-entidad-juridica', '#tab-confirmacion', '#tab-gracias'];
-            form_validators = [allow_continue, persona_fisica_validator, datos_laborales_validator, send_data];
-            updateNavigation();
-
-            $('.tipo-certificado-label, #label-confirmacion-title-empresa').text(tipo_certificado);
-
-            $('#columna-datos-empresa, #row-form-cargo, #row-form-area, #row-form-titulo, #columnas-data-cargo, #columnas-data-area, #columnas-data-titulo').show();
-
-            resetWzForms();
-            c_scrollTo('#wz-persona-fisica-title', 500);
-
-            next();
-        });
-
-        $('#btn-persona-juridica-2').on('click', function () {
-            tipo_certificado = 'Persona Jurídica';
-
-            $('.qty-pasos, #confirmacion-paso-number').text('3');
-
-            tabs = ['#tab-tipo-certificado', '#tab-solicitante', '#tab-entidad-juridica', '#tab-confirmacion', '#tab-gracias'];
-            form_validators = [allow_continue, persona_fisica_validator, persona_juridica_validator, send_data];
-            updateNavigation();
-
-            $('.tipo-certificado-label, #label-confirmacion-title-empresa').text(tipo_certificado);
-
-            // form settings
-            $('#row-form-cargo, #row-form-area, #row-form-titulo, #columnas-data-cargo, #columnas-data-area, #columnas-data-titulo').hide();
-            $('#columna-datos-empresa').show();
-
-            resetWzForms();
-            c_scrollTo('#wz-persona-fisica-title', 500);
-
-            next();
-        });
-
-        $('.btn-avanzar').on('click', function () {
-            next();
-        });
-
-        $('.btn-volver').on('click', function () {
-            prev();
-        });
-
-        $("input").inputmask({ casing: "upper" });
-
-        // busca ci
+        // autocomplete nombre y apellido
         $('#ci').on('change', function (e) {
 
-            const ci = cleanAndReturnInputValue(this);
+            const ci = trimInputAndReturnValue(this);
 
             // search and update
             $('#nombres, #apellidos').attr('disabled', 'disabled');
@@ -383,11 +378,11 @@
 
         });
 
-        // busca ruc
+        // autocomplete razon social
         $('#ruc').on('change', function (e) {
 
             // sanitize an clean input data
-            const ruc = cleanAndReturnInputValue(this);
+            const ruc = trimInputAndReturnValue(this);
 
             // search and update
             $('#razon-social').attr('disabled', 'disabled');
@@ -404,7 +399,7 @@
 
         });
 
-        // busca ciudades
+        // autocomplete ciudades
         $("#direccion").autocomplete({
             source: _autocompleteCiudades,
             minLength: 1,
@@ -421,6 +416,60 @@
                     });
             }
         });
+
+    }
+
+    // on load
+    $(function () {
+
+        // default form related configuration
+        $('#wf-form-Form-Persona-Fisica, #wf-form-Form-Persona-Juridica').attr('autocomplete', 'off')
+        $('#fecha-de-nacimiento').attr('type', 'date');
+
+        // configure validator plugin
+        $("input").inputmask({ casing: "upper" });
+        $.extend($.validator.messages, {
+            required: 'Campo obligatorio.',
+            email: 'Por favor, introduce una dirección de email válida.',
+            equalto: 'Por favor, introduzca el mismo valor de nuevo.'
+        });
+
+        // bind wizzard navigation to the next and prev buttons clic
+        $('.btn-avanzar').on('click', function () {
+            next();
+        });
+
+        $('.btn-volver').on('click', function () {
+            prev();
+        });
+
+        // bind choose certificate click to start the wizzard
+        $('#btn-persona-fisica-2').on('click', function () {
+            preparePFWizzard();
+            $('#columna-datos-empresa').hide();
+            next();
+            c_scrollTo('#wz-persona-fisica-title', 500);
+        });
+
+        $('#btn-persona-fisica-datos-laborales-2').on('click', function () {
+            preparePFLaboralWizzard();
+            $('#columna-datos-empresa').show();
+            $('#row-form-cargo, #row-form-area, #row-form-titulo, #columnas-data-cargo, #columnas-data-area, #columnas-data-titulo').show();
+            next();
+            c_scrollTo('#wz-persona-fisica-title', 500);
+        });
+
+        $('#btn-persona-juridica-2').on('click', function () {
+            preparePJWizzard()
+            $('#columna-datos-empresa').show();
+            $('#row-form-cargo, #row-form-area, #row-form-titulo, #columnas-data-cargo, #columnas-data-area, #columnas-data-titulo').hide();
+            next();
+            c_scrollTo('#wz-persona-fisica-title', 500);
+        });
+
+        // autocomplete funcion for CI, RUC an Ciudad
+        setupAdvancedFormBehaviors();
+
     });
 
 

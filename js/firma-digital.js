@@ -1,6 +1,6 @@
 /*
  * Abaco Firma Digital
- * version 1.0.0
+ * version 1.0.3
  */
 (function ($, window, document, undefined) {
     'use strict';
@@ -178,7 +178,7 @@
             window.MauticFormCallback = {};
         }
 
-        window.MauticFormCallback['formulariofirmadigital'] = {
+        window.MauticFormCallback['wkfformulariofirmadigital'] = {
             onResponse: function (response) {
 
                 block_buttons = false;
@@ -203,20 +203,20 @@
         };
 
         // fill data and send
-        $('#mauticform_input_formulariofirmadigital_necesidadsolucion').val(tipo_certificado);
-        $('#mauticform_input_formulariofirmadigital_cedula_de_identidad1').val(form_data['ci']);
-        $('#mauticform_input_formulariofirmadigital_nombre_y_apellido').val(form_data['nombres']);
-        $('#mauticform_input_formulariofirmadigital_apellidos').val(form_data['apellidos']);
-        $('#mauticform_input_formulariofirmadigital_fecha_de_nacimiento').val(form_data['fecha-de-nacimiento']);
-        $('#mauticform_input_formulariofirmadigital_telefono').val(form_data['telefono']);
-        $('#mauticform_input_formulariofirmadigital_correo_electronico').val(form_data['email']);
-        $('#mauticform_input_formulariofirmadigital_direccion').val(form_data['direccion']);
-        $('#mauticform_input_formulariofirmadigital_razon_social').val(form_data['razon-social']);
-        $('#mauticform_input_formulariofirmadigital_ruc').val(form_data['ruc']);
-        $('#mauticform_input_formulariofirmadigital_cargo').val(form_data['cargo']);
-        $('#mauticform_input_formulariofirmadigital_area__departamento_de_la').val(form_data['area']);
-        $('#mauticform_input_formulariofirmadigital_titulo').val(form_data['titulo']);
-        document.getElementById('mauticform_formulariofirmadigital').submit();
+        $('#mauticform_input_wkfformulariofirmadigital_necesidadsolucion').val(tipo_certificado);
+        $('#mauticform_input_wkfformulariofirmadigital_cedula_de_identidad1').val(form_data['ci']);
+        $('#mauticform_input_wkfformulariofirmadigital_nombre_y_apellido').val(form_data['nombres']);
+        $('#mauticform_input_wkfformulariofirmadigital_apellidos').val(form_data['apellidos']);
+        $('#mauticform_input_wkfformulariofirmadigital_fecha_de_nacimiento').val(form_data['fecha-de-nacimiento']);
+        $('#mauticform_input_wkfformulariofirmadigital_telefono').val(form_data['telefono']);
+        $('#mauticform_input_wkfformulariofirmadigital_correo_electronico').val(form_data['email']);
+        $('#mauticform_input_wkfformulariofirmadigital_direccion').val(form_data['direccion']);
+        $('#mauticform_input_wkfformulariofirmadigital_razon_social').val(form_data['razon-social']);
+        $('#mauticform_input_wkfformulariofirmadigital_ruc').val(form_data['ruc']);
+        $('#mauticform_input_wkfformulariofirmadigital_cargo').val(form_data['cargo']);
+        $('#mauticform_input_wkfformulariofirmadigital_area__departamento_de_la').val(form_data['area']);
+        $('#mauticform_input_wkfformulariofirmadigital_titulo').val(form_data['titulo']);
+        document.getElementById('mauticform_wkfformulariofirmadigital').submit();
 
     }
 

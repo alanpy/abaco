@@ -1,6 +1,6 @@
 /*
  * Abaco Firma Digital
- * version 1.0.3
+ * version 1.0.4
  */
 (function ($, window, document, undefined) {
     'use strict';
@@ -203,7 +203,7 @@
         };
 
         // fill data and send
-        $('#mauticform_input_wkfformulariofirmadigital_necesidadsolucion').val(tipo_certificado);
+        $('#mauticform_input_wkfformulariofirmadigital_tipo_de_persona').val(tipo_certificado);
         $('#mauticform_input_wkfformulariofirmadigital_cedula_de_identidad1').val(form_data['ci']);
         $('#mauticform_input_wkfformulariofirmadigital_nombre_y_apellido').val(form_data['nombres']);
         $('#mauticform_input_wkfformulariofirmadigital_apellidos').val(form_data['apellidos']);

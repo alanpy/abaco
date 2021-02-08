@@ -1,6 +1,6 @@
 /*
  * Abaco Firma Digital
- * version 1.0.4
+ * version 1.0.5
  */
 (function ($, window, document, undefined) {
     'use strict';
@@ -441,6 +441,13 @@
 
         $('.btn-volver').on('click', function () {
             prev();
+        });
+
+        // detect ENTER Key in forms to navigate
+        $('#wf-form-Form-Persona-Fisica, #wf-form-Form-Persona-Juridica').on('keypress', function (e) {
+            if (e.keyCode == 13 || e.which == 13) {
+                next()
+            }
         });
 
         // bind choose certificate click to start the wizzard

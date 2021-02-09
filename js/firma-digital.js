@@ -1,6 +1,6 @@
 /*
  * Abaco Firma Digital
- * version 1.0.6
+ * version 1.0.7
  */
 (function ($, window, document, undefined) {
     'use strict';
@@ -196,6 +196,7 @@
             method: 'POST',
             data: formData
         }).done(function (response) {
+            block_buttons = false;
 
             if (response && response.success) {
                 $('#certificado-submit-error').hide();

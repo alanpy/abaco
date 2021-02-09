@@ -1,6 +1,6 @@
 /*
  * Abaco Firma Digital
- * version 1.0.5
+ * version 1.0.6
  */
 (function ($, window, document, undefined) {
     'use strict';
@@ -91,7 +91,7 @@
 
             // scroll to wz top
             let _view = tipo_certificado == 'Persona Física' ? '#wz-confirmacion-title' : '#wz-persona-juridica-title';
-            c_scrollTo(_view, 500);
+            mobileScrollTo(_view, 500);
 
             return true;
         }
@@ -117,7 +117,7 @@
             $('#columnas-data-titulo .value-confirmation-certificado').text(form_data.titulo);
 
             // scroll to wz top in 0.5s
-            c_scrollTo('#wz-confirmacion-title', 500);
+            mobileScrollTo('#wz-confirmacion-title', 500);
 
             return true;
         }
@@ -142,7 +142,7 @@
             $('#columnas-data-titulo .value-confirmation-certificado').text(form_data.titulo);
 
             // scroll to wz top in 0.5s
-            c_scrollTo('#wz-confirmacion-title', 500);
+            mobileScrollTo('#wz-confirmacion-title', 500);
 
             return true;
         }
@@ -167,62 +167,68 @@
         $('#certificado-submit-error').hide();
 
         // submit
-        envia_formulario_mautic();
+        envia_formulario();
 
         return false;
     }
 
-    function envia_formulario_mautic() {
+    function envia_formulario() {
 
-        if (typeof window.MauticFormCallback == 'undefined') {
-            window.MauticFormCallback = {};
-        }
-
-        window.MauticFormCallback['wkfformulariofirmadigital'] = {
-            onResponse: function (response) {
-
-                block_buttons = false;
-                $('#confirmation-tab .btn-avanzar')
-                    .text('Confirmar')
-                    .removeClass('btn-avanzar-wait');
-
-                $('#confirmation-tab .btn-volver')
-                    .removeClass('btn-volver-wait');
-
-                $('#confirmation-tab .loader-indicator')
-                    .addClass('hide-loading');
-
-                if (response && response.success) {
-                    $('#certificado-submit-error').hide();
-                    next(true);
-                } else {
-                    $('#certificado-submit-error').show();
-                }
-
-            }
+        const formData = {
+            'tipo': tipo_certificado,
+            'ci': form_data['ci'],
+            'nombres': form_data['nombres'],
+            'apellidos': form_data['apellidos'],
+            'fecha_nacimeinto': form_data['fecha-de-nacimiento'],
+            'telefono': form_data['telefono'],
+            'email': form_data['email'],
+            'direccion': form_data['direccion'],
+            'ruc': form_data['ruc'],
+            'razon_social': form_data['razon-social'],
+            'cargo': form_data['cargo'],
+            'area': form_data['area'],
+            'titulo': form_data['titulo']
         };
 
-        // fill data and send
-        $('#mauticform_input_wkfformulariofirmadigital_tipo_de_persona').val(tipo_certificado);
-        $('#mauticform_input_wkfformulariofirmadigital_cedula_de_identidad1').val(form_data['ci']);
-        $('#mauticform_input_wkfformulariofirmadigital_nombre_y_apellido').val(form_data['nombres']);
-        $('#mauticform_input_wkfformulariofirmadigital_apellidos').val(form_data['apellidos']);
-        $('#mauticform_input_wkfformulariofirmadigital_fecha_de_nacimiento').val(form_data['fecha-de-nacimiento']);
-        $('#mauticform_input_wkfformulariofirmadigital_telefono').val(form_data['telefono']);
-        $('#mauticform_input_wkfformulariofirmadigital_correo_electronico').val(form_data['email']);
-        $('#mauticform_input_wkfformulariofirmadigital_direccion').val(form_data['direccion']);
-        $('#mauticform_input_wkfformulariofirmadigital_razon_social').val(form_data['razon-social']);
-        $('#mauticform_input_wkfformulariofirmadigital_ruc').val(form_data['ruc']);
-        $('#mauticform_input_wkfformulariofirmadigital_cargo').val(form_data['cargo']);
-        $('#mauticform_input_wkfformulariofirmadigital_area__departamento_de_la').val(form_data['area']);
-        $('#mauticform_input_wkfformulariofirmadigital_titulo').val(form_data['titulo']);
-        document.getElementById('mauticform_wkfformulariofirmadigital').submit();
+        $.ajax({
+            url: 'https://mautic.abaco.com.py/firma-digital.php',
+            dataType: 'json',
+            method: 'POST',
+            data: formData
+        }).done(function (response) {
+
+            if (response && response.success) {
+                $('#certificado-submit-error').hide();
+                next(true);
+            } else {
+                $('#certificado-submit-error').show();
+            }
+
+        }).always(function () {
+            block_buttons = false;
+            $('#confirmation-tab .btn-avanzar')
+                .text('Confirmar')
+                .removeClass('btn-avanzar-wait');
+
+            $('#confirmation-tab .btn-volver')
+                .removeClass('btn-volver-wait');
+
+            $('#confirmation-tab .loader-indicator')
+                .addClass('hide-loading');
+
+        });
 
     }
 
 
     // scroll into view helper function
-    function c_scrollTo(jQselector, delay) {
+    function mobileScrollTo(jQselector, delay) {
+
+        // do not scrool on big screen
+        if($(document).width() > 991) {
+            return;
+        }
+
         const $el = $(jQselector);
 
         if ($el.lenght === 0) {
@@ -455,7 +461,7 @@
             preparePFWizzard();
             $('#columna-datos-empresa').hide();
             next();
-            c_scrollTo('#wz-persona-fisica-title', 500);
+            mobileScrollTo('#wz-persona-fisica-title', 500);
         });
 
         $('#btn-persona-fisica-datos-laborales-2').on('click', function () {
@@ -463,7 +469,7 @@
             $('#columna-datos-empresa').show();
             $('#row-form-cargo, #row-form-area, #row-form-titulo, #columnas-data-cargo, #columnas-data-area, #columnas-data-titulo').show();
             next();
-            c_scrollTo('#wz-persona-fisica-title', 500);
+            mobileScrollTo('#wz-persona-fisica-title', 500);
         });
 
         $('#btn-persona-juridica-2').on('click', function () {
@@ -471,7 +477,7 @@
             $('#columna-datos-empresa').show();
             $('#row-form-cargo, #row-form-area, #row-form-titulo, #columnas-data-cargo, #columnas-data-area, #columnas-data-titulo').hide();
             next();
-            c_scrollTo('#wz-persona-fisica-title', 500);
+            mobileScrollTo('#wz-persona-fisica-title', 500);
         });
 
         // autocomplete funcion for CI, RUC an Ciudad

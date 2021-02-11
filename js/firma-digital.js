@@ -1,6 +1,6 @@
 /*
  * Abaco Firma Digital
- * version 1.0.7
+ * version 1.0.10
  */
 (function ($, window, document, undefined) {
     'use strict';
@@ -17,6 +17,7 @@
     let form_validators = [];
     let tipo_certificado = null;
     let form_data = {};
+    let utmParams = null;
     let block_buttons = false;
 
     function updateNavigation() {
@@ -70,6 +71,33 @@
 
     function allow_continue() {
         return true;
+    }
+
+    function getUtmParams() {
+        if (utmParams !== null) {
+            return utmParams;
+        }
+
+        utmParams = {};
+
+        if (!window.UtmForm) {
+            return;
+        }
+
+        // read 
+        let params = [].concat(
+            Object.keys(window.UtmForm._utmParamsMap),
+            Object.keys(window.UtmForm._additionalParamsMap),
+            Object.keys(window.UtmForm._initialUtmParamsMap));
+
+        params.map(function (param) {
+            utmParams[param] = window.UtmForm.utmCookie.readCookie(param);
+        })
+
+        utmParams.ireferrer = window.UtmForm.utmCookie.initialReferrer();
+        utmParams.lreferrer = window.UtmForm.utmCookie.lastReferrer();
+        utmParams.ilandpage = window.UtmForm.utmCookie.initialLandingPageUrl();
+        utmParams.visits = window.UtmForm.utmCookie.visits();
     }
 
     // datos del solicitante
@@ -182,7 +210,7 @@
 
     function envia_formulario() {
 
-        const formData = {
+        const formData = $.extend({
             'tipo': tipo_certificado,
             'ci': form_data['ci'],
             'nombres': form_data['nombres'],
@@ -196,7 +224,7 @@
             'cargo': form_data['cargo'],
             'area': form_data['area'],
             'titulo': form_data['titulo']
-        };
+        }, getUtmParams());
 
         /* 
         // pass cookie from mautic.flaro.com.py domain to mautic.abaco.com.py

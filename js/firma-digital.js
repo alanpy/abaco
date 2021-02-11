@@ -33,6 +33,14 @@
         return true;
     }
 
+    function resetWizzard() {
+        setSteps(['#tab-tipo-certificado']);
+        setStepValidators([allow_continue]);
+        updateNavigation();
+
+        $('#tab-tipo-certificado').trigger('click');
+    }
+
     function next(no_validate) {
 
         if (block_buttons) {
@@ -190,6 +198,17 @@
             'titulo': form_data['titulo']
         };
 
+        /* 
+        // pass cookie from mautic.flaro.com.py domain to mautic.abaco.com.py
+        $.cookie('mtc_sid', $.cookie('mtc_sid'), { expires: 1, domain: 'abaco.com.py', path: '/', secure: true});
+        $.cookie('mtc_id', $.cookie('mtc_id'), { expires: 1, domain: 'abaco.com.py', path: '/', secure: true});
+
+        ajax call options
+            xhrFields: {
+                withCredentials: true
+            }
+        */
+
         $.ajax({
             url: 'https://mautic.abaco.com.py/firma-digital.php',
             dataType: 'json',
@@ -205,6 +224,8 @@
                 $('#certificado-submit-error').show();
             }
 
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            $('#certificado-submit-error').show();
         }).always(function () {
             block_buttons = false;
             $('#confirmation-tab .btn-avanzar')
@@ -226,7 +247,7 @@
     function mobileScrollTo(jQselector, delay) {
 
         // do not scrool on big screen
-        if($(document).width() > 991) {
+        if ($(document).width() > 991) {
             return;
         }
 
@@ -448,6 +469,10 @@
 
         $('.btn-volver').on('click', function () {
             prev();
+        });
+
+        $('#btn-reset-wizzard').off('click').on('click', function () {
+            resetWizzard();
         });
 
         // detect ENTER Key in forms to navigate

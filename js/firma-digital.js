@@ -84,7 +84,7 @@
             return;
         }
 
-        // read 
+        // read
         let params = [].concat(
             Object.keys(window.UtmForm._utmParamsMap),
             Object.keys(window.UtmForm._additionalParamsMap),
@@ -161,7 +161,7 @@
         return false;
     }
 
-    // persona jurídica 
+    // persona jurídica
     function persona_juridica_validator() {
         if ($('#wf-form-Form-Persona-Juridica').validate().form()) {
 
@@ -226,7 +226,7 @@
             'titulo': form_data['titulo']
         }, getUtmParams());
 
-        /* 
+        /*
         // pass cookie from mautic.flaro.com.py domain to mautic.abaco.com.py
         $.cookie('mtc_sid', $.cookie('mtc_sid'), { expires: 1, domain: 'abaco.com.py', path: '/', secure: true});
         $.cookie('mtc_id', $.cookie('mtc_id'), { expires: 1, domain: 'abaco.com.py', path: '/', secure: true});
@@ -238,7 +238,7 @@
         */
 
         $.ajax({
-            url: 'https://mautic.abaco.com.py/firma-digital.php',
+            url: 'https://mautic.flaro.com.py/firma/firma-digital.php',
             dataType: 'json',
             method: 'POST',
             data: formData

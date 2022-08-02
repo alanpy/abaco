@@ -111,6 +111,7 @@
             form_data['telefono'] = $('#telefono').val();
             form_data['email'] = $('#email').val().toUpperCase();
             form_data['direccion'] = $('#direccion').val();
+            form_data['finalidad'] = $('#finalidad-certificado').val();
             form_data['razon-social'] = '';
             form_data['ruc'] = '';
             form_data['cargo'] = '';
@@ -219,6 +220,7 @@
             'telefono': form_data['telefono'],
             'email': form_data['email'],
             'direccion': form_data['direccion'],
+            'finalidad': form_data['finalidad'],
             'ruc': form_data['ruc'],
             'razon_social': form_data['razon-social'],
             'cargo': form_data['cargo'],
